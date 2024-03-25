@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Eventos: Tarea 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+    <button class="off">La máquina está apagada</button>
+
+  <script>
+    const btn = document.querySelector('.off');
+
+    // Agrega tu código aquí
+    let isOn = false;
+
+    btn.addEventListener('click', function() {
+        if (isOn) {
+            btn.textContent = 'La máquina está apagada';
+            isOn = false;
+        } else {
+            btn.textContent = 'La máquina está encendida';
+            isOn = true;
+        }
+    });
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Tarea 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // Definir un array con elementos de comida
+    const myArray = ['tomates', 'garbanzos', 'cebollas', 'arroz', 'frijoles negros'];
+    // Crear un elemento de lista desordenada
+    const lista = document.createElement('ul');
+
+    // Agregar elementos del array al elemento de lista
+    myArray.forEach(item => {
+      // Crear un elemento de lista
+      const listItem = document.createElement('li');
+      // Establecer el texto del elemento de lista como el elemento actual del array
+      listItem.textContent = item;
+      // Agregar el elemento de lista al elemento de lista desordenada
+      lista.appendChild(listItem);
+    });
+
+    // Obtener la sección con la clase "preview"
+    const seccion = document.querySelector('section');
+    // Agregar el elemento de lista desordenada a la sección
+    seccion.appendChild(lista);
+  </script>
+
+</html>

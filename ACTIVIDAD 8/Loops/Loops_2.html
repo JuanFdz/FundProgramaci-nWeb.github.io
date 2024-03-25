@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Tarea 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+      <p id="resultado"></p>
+    </section>
+
+  </body>
+  <script>
+    // Definir el nombre a buscar en el directorio
+    const nombre = 'Juan';
+    // Obtener el párrafo con el id "resultado"
+    const para = document.getElementById('resultado');
+    // Definir el directorio telefónico
+    const directorio = [
+      { nombre: 'Juan', telefono: '123456789' },
+      { nombre: 'María', telefono: '987654321' },
+      { nombre: 'Pedro', telefono: '456123789' }
+    ];
+
+    // Recorrer el directorio para encontrar el nombre especificado
+    for (let i = 0; i < directorio.length; i++) {
+      // Verificar si el nombre en la posición actual coincide con el nombre buscado
+      if (directorio[i].nombre === nombre) {
+        // Si se encuentra el nombre, establecer el contenido del párrafo con el nombre y teléfono correspondientes
+        para.textContent = `Nombre: ${directorio[i].nombre}, Teléfono: ${directorio[i].telefono}`;
+        // Salir del bucle una vez que se ha encontrado el nombre
+        break;
+      }
+    }
+  </script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Nombres Aleatorios</title>
+</head>
+<body>
+
+<section id="section">
+  <!-- Aquí se añadirá el párrafo generado -->
+</section>
+
+<script>
+const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada'];
+const para = document.createElement('p'); // Crear un nuevo párrafo en el documento HTML
+
+// Función para generar un número aleatorio dentro de un rango dado
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Función para elegir un nombre aleatorio de un array dado y devolverlo
+function chooseName(namesArray) {
+    // Generar un índice aleatorio usando la función random() dentro del rango de la longitud del array
+    const randomIndex = random(0, namesArray.length - 1);
+    // Devolver el nombre aleatorio obtenido del array
+    return namesArray[randomIndex];
+}
+
+// Obtener el nombre aleatorio y asignarlo al contenido del párrafo
+para.textContent = chooseName(names);
+
+// Seleccionar el elemento HTML con el ID 'section'
+const section = document.getElementById('section');
+
+// Limpiar cualquier contenido existente dentro del elemento HTML con el ID 'section'
+section.innerHTML = ' ';
+
+// Agregar el párrafo al elemento HTML con el ID 'section'
+section.appendChild(para);
+</script>
+
+</body>
+</html>

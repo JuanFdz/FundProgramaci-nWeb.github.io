@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <title>Funciones: Tarea 4</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+<section class="preview">
+</section>
+
+<script>
+  const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada'];
+  const para = document.createElement('p');
+
+  // Utilizando una función de flecha para la función de filtro
+  const shortNames = names.filter(name => name.length < 5);
+  para.textContent = shortNames;
+
+  // No editar el código debajo de este punto
+
+  const section = document.querySelector('section');
+  section.appendChild(para);
+</script>
+
+</body>
+</html>

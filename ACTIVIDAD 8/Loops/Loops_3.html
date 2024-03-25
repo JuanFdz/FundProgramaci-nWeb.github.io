@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Tarea 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+      <p id="resultado"></p>
+    </section>
+
+  </body>
+  <script>
+    // Inicializar el contador en 500
+    let i = 500;
+    // Obtener el elemento de párrafo con el id "resultado"
+    const para = document.getElementById('resultado');
+
+    // Función para verificar si un número es primo
+    function esPrimo(num) {
+      // Iterar desde 2 hasta un número antes de 'num' para verificar si es divisible por algún número
+      for(let i = 2; i < num; i++) {
+        // Si 'num' es divisible por 'i', no es primo, entonces retornar falso
+        if(num % i === 0) {
+          return false;
+        }
+      }
+      // Si 'num' no es divisible por ningún número entre 2 y 'num - 1', entonces es primo
+      return true;
+    }
+
+    // Agregar números primos al elemento de párrafo
+    while (i > 1) {
+      // Verificar si el número actual es primo
+      if (esPrimo(i)) {
+        // Agregar el número primo al contenido del párrafo
+        para.textContent += `${i}, `;
+      }
+      // Disminuir el contador para continuar con el siguiente número
+      i--;
+    }
+  </script>
+
+</html>

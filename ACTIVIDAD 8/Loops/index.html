@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tareas: HTML, CSS y JavaScript</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Estilos específicos para cada tarea */
+
+    /* Tarea 1 */
+    #tarea1 ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #tarea1 ul li {
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      background-color: #c9c9c9;
+      border-radius: 5px;
+    }
+
+    /* Tarea 2 */
+    #tarea2 p {
+      font-weight: bold;
+    }
+
+    /* Tarea 3 */
+    #tarea3 p {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="container" id="tarea1">
+    <h2>Tarea 1: Recorriendo un array y mostrando elementos</h2>
+    <ul>
+      <li>Tomates</li>
+      <li>Garbanzos</li>
+      <li>Cebollas</li>
+      <li>Arroz</li>
+      <li>Frijoles negros</li>
+    </ul>
+  </section>
+
+  <section class="container" id="tarea2">
+    <h2>Tarea 2: Búsqueda en un directorio telefónico</h2>
+    <p>Nombre: Juan, Teléfono: 123456789</p>
+  </section>
+
+  <section class="container" id="tarea3">
+    <h2>Tarea 3: Números primos</h2>
+    <p>Los números primos entre 2 y 500 son: 2, 3, 5, 7, ...</p>
+  </section>
+
+  <script>
+    // JavaScript para la tarea 1
+    const myArray = ['tomates', 'garbanzos', 'cebollas', 'arroz', 'frijoles negros'];
+    const listaTarea1 = document.createElement('ul');
+    myArray.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item;
+      listaTarea1.appendChild(listItem);
+    });
+    document.getElementById('tarea1').appendChild(listaTarea1);
+
+    // JavaScript para la tarea 2
+    const nombre = 'Juan';
+    const paraTarea2 = document.createElement('p');
+    const directorio = [
+      { nombre: 'Juan', telefono: '123456789' },
+      { nombre: 'María', telefono: '987654321' },
+      { nombre: 'Pedro', telefono: '456123789' }
+    ];
+    for (let i = 0; i < directorio.length; i++) {
+      if (directorio[i].nombre === nombre) {
+        paraTarea2.textContent = `Nombre: ${directorio[i].nombre}, Teléfono: ${directorio[i].telefono}`;
+        break;
+      }
+    }
+    document.getElementById('tarea2').appendChild(paraTarea2);
+
+    // JavaScript para la tarea 3
+    let i = 500;
+    const paraTarea3 = document.createElement('p');
+    function esPrimo(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+    while (i > 1) {
+      if (esPrimo(i)) {
+        paraTarea3.textContent += `${i}, `;
+      }
+      i--;
+    }
+    document.getElementById('tarea3').appendChild(paraTarea3);
+  </script>
+
+</body>
+</html>
